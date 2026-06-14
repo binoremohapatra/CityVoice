@@ -1,73 +1,63 @@
-# 🏙️ CityVoice — Civic Engagement App
+# 📢 CityVoice — Civic Issue Reporting App (Flutter)
 
-A cross-platform Flutter app that gives citizens a voice in their city.  
-Report issues, track civic problems, and engage with your local community — all in one place.
+> A Flutter mobile app for citizens to report, view, and track civic issues on an interactive map. Features location-based issue submission with photo support, complaint status tracking, and a glassmorphism UI.
 
----
-
-## 🚀 Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Framework | Flutter (Dart) |
-| Maps | Flutter Map + LatLong2 |
-| Networking | Dio |
-| Location | Geolocator |
-| Charts | FL Chart |
-| Media | Camera, Image Picker, Audio Waveforms |
-| Storage | Shared Preferences |
-| UI | Google Fonts, Flutter SVG, Cached Network Image |
+[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.3+-0175C2?logo=dart)](https://dart.dev)
 
 ---
 
 ## ✨ Features
 
-- 🗺️ **Interactive Map** — View and report civic issues on a live map
-- 📸 **Media Uploads** — Attach photos, videos, or audio to your reports
-- 🎙️ **Audio Recording** — Record voice complaints with waveform visualizer
-- 📊 **Analytics Dashboard** — Track issue resolution stats with charts
-- 📶 **Connectivity Aware** — Handles offline/online states gracefully
-- 🌐 **Cross-Platform** — Runs on Android, iOS, Web, Linux, Windows, macOS
+- **Authentication** — Google Auth + role selection (Citizen / Official)
+- **Report Issue** — Category selection, urgency level, location picker, photo/media capture, review & submit flow
+- **Interactive Map** — View all reported issues on map with filter panel, location search, and complaint preview sheet
+- **Complaint Feed** — Personal complaint list with filter chips and analytics bottom sheet
+- **Complaint Detail** — Status timeline (`SUBMITTED → ASSIGNED → INVESTIGATION → RESOLVED`), metadata, location card, comment system, related complaints
+- **Notifications** — Filterable notification feed with settings
+- **User Profile** — Gamification panel, theme preview, settings
+- **Splash Screen** — Animated launch screen
 
----
+## 🛠️ Tech Stack
 
-## 🏃 Run Locally
+| Layer | Technology |
+|---|---|
+| Framework | Flutter / Dart |
+| Platforms | Android, iOS, Web, Linux, macOS, Windows |
+| State | Widget-level state (Stateful widgets) |
+| Map | Interactive map screen with location delegates |
+| Media | Camera / gallery via image picker |
+| UI | Custom theme, glassmorphism, custom tab/app bars |
 
-### Prerequisites
-- Flutter SDK 3.x+
-- Dart SDK >=3.9.0
-
-### Steps
+## 🚀 Run Locally
 
 ```bash
-# Clone the repo
 git clone https://github.com/binoremohapatra/CityVoice.git
 cd CityVoice
-
-# Install dependencies
 flutter pub get
-
-# Run the app
 flutter run
 ```
-
----
 
 ## 📁 Project Structure
 
 ```
 lib/
 ├── main.dart
-├── screens/       # UI screens
-├── widgets/       # Reusable components
-├── models/        # Data models
-└── services/      # API & location services
+├── routes/app_routes.dart
+├── theme/app_theme.dart
+├── presentation/
+│   ├── authentication_screen/
+│   ├── citizen_dashboard/
+│   ├── report_issue_flow/
+│   ├── interactive_map_screen/
+│   ├── complaint_details_tracking/
+│   ├── my_complaints_feed/
+│   ├── notifications_screen/
+│   ├── user_profile_screen/
+│   └── splash_screen/
+└── widgets/           Shared UI components
 ```
 
 ---
 
-## 👨‍💻 Author
-
-**Binore Mohapatra**  
-3rd Semester CSE Student | Flutter & Full-Stack Developer  
-[GitHub](https://github.com/binoremohapatra) • [Email](mailto:binoremohapatra@gmail.com)
+**Built by [Binore Mohapatra](https://github.com/binoremohapatra)**
